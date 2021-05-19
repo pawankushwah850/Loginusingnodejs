@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const dotEnv = require('dotenv');
 const mongoose = require('mongoose');
-
+const Auth = require('./Router/Auth')
 //configure cors
 app.use(cors());
 
@@ -20,7 +20,7 @@ require('./DB/corn');
 app.use(express.json());
 
 ///using router files
-app.use(require('./Router/auth'));
+app.use(Auth);
 
 
 app.listen(PORT, () => {
